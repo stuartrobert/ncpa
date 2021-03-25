@@ -12,7 +12,7 @@ class ncpa (
 ) inherits ncpa::params {
 
   class { 'ncpa::install': }
-  class { 'ncpa::config': }
-  class { 'ncpa::service': }
+  #class { 'ncpa::config': }
+  #class { 'ncpa::service': }
 
 }
