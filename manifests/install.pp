@@ -20,7 +20,7 @@ class ncpa::install {
         }
 
         download_file { $file_name:
-          url                   => "${ncpa::package_source_location}/${file_name}",
+          url                   => "${ncpa::package_source}/${file_name}",
           destination_directory => $ncpa::download_destination,
           proxy_address         => $ncpa::proxy_url,
           require               => File[$ncpa::download_destination],
