@@ -17,7 +17,7 @@ class ncpa (
   service { 'ncpalistener':
     ensure  => $service_state,
     enable  => $service_enable,
-    require => File[$config_file],
+    require => Class['ncpa::config'],
   }
 
 }
