@@ -2,7 +2,7 @@
 class ncpa::install {
   assert_private("You're not supposed to do that!")
 
-  $file_name = "ncpa-${package_version}"
+  $file_name = "ncpa-${ncpa::package_version}"
 
   case downcase($facts['os']['family']) {
     'windows': {
