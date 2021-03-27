@@ -4,7 +4,7 @@ class ncpa::config (
   $config_content  = $ncpa::config_content,
   $config_template = $ncpa::config_template,
   $install_path    = $ncpa::install_path,
-  $password        = $ncpa::password,
+  $api_token       = $ncpa::api_token,
 ) {
   assert_private("You're not supposed to do that!")
 

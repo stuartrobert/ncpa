@@ -32,7 +32,7 @@ class ncpa::install {
           # doc ref: https://assets.nagios.com/downloads/ncpa/docs/Installing-NCPA.pdf
           install_options => [
             '/S',
-            "/TOKEN=${ncpa::api_token}",
+            '/TOKEN=THIS_doesnt_matter',
           ],
           require         => Download_file[$file_name],
         }
