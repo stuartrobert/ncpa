@@ -9,7 +9,7 @@ class ncpa::params {
   $config_template         = 'ncpa/ncpa.cfg.epp'
   $install_path            = 'C:\Program Files (x86)\Nagios\NCPA'
   $proxy_url               = undef
-  $password                = undef
+  $api_token               = 'A_STRONG_token'
   $chocolatey_provider     = false
   $chocolatey_package_name = 'ncpa'
 

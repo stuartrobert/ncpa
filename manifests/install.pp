@@ -29,11 +29,10 @@ class ncpa::install {
           ensure          => $ncpa::package_version,
           source          => "${ncpa::download_destination}/${file_name}",
           provider        => 'windows',
+          # doc ref: https://assets.nagios.com/downloads/ncpa/docs/Installing-NCPA.pdf
           install_options => [
-            '/quiet',
-            {
-              'INSTALLLOCATION' => $ncpa::install_path,
-            },
+            '/S',
+            "/TOKEN=${ncpa::api_token}",
           ],
           require         => Download_file[$file_name],
         }
