@@ -12,8 +12,11 @@ class ncpa (
   Optional[String[1]] $proxy_url       = $ncpa::params::proxy_url,
 ) inherits ncpa::params {
 
-  class { 'ncpa::install': }
-  class { 'ncpa::config': }
+  class { 'ncpa::install':
+  }
+  class { 'ncpa::config':
+    require => Class['ncpa::install'],
+  }
 
   service { 'ncpalistener':
     ensure  => $service_state,
