@@ -2,8 +2,6 @@
 class ncpa::install {
   assert_private("You're not supposed to do that!")
 
-  $file_name = "ncpa-${ncpa::package_version}"
-
   case downcase($facts['os']['family']) {
     'windows': {
       if $ncpa::chocolatey_provider {
@@ -19,6 +17,7 @@ class ncpa::install {
           }
         }
 
+        $file_name = "ncpa-${ncpa::package_version}.exe"
         download_file { $file_name:
           url                   => "${ncpa::package_source}/${file_name}",
           destination_directory => $ncpa::download_destination,
