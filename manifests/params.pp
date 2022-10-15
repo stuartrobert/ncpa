@@ -10,12 +10,12 @@ class ncpa::params {
   $install_path            = 'C:\Program Files (x86)\Nagios\NCPA'
   $proxy_url               = undef
   $api_token               = 'A_STRONG_token'
-  $chocolatey_provider     = false
+  $use_chocolatey          = true
   $chocolatey_package_name = 'ncpa'
 
   if $chocolatey_provider {
     $package_version = 'latest'
   } else {
-    $package_version = '2.3.1'
+    $package_version = '2.4.0'
   }
 }
