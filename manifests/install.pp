@@ -4,7 +4,7 @@ class ncpa::install {
 
   case downcase($facts['os']['family']) {
     'windows': {
-      if $ncpa::chocolatey_provider {
+      if $ncpa::use_chocolatey {
         package { $ncpa::params::chocolatey_package_name:
           ensure   => $ncpa::package_version,
           provider => 'chocolatey',
