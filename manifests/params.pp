@@ -13,7 +13,7 @@ class ncpa::params {
   $use_chocolatey          = true
   $chocolatey_package_name = 'ncpa'
 
-  if $chocolatey_provider {
+  if $use_chocolatey {
     $package_version = 'latest'
   } else {
     $package_version = '2.4.0'
