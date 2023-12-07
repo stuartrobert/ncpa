@@ -6,7 +6,6 @@ class ncpa (
   String $package_source               = $ncpa::params::package_source,
   String $package_name                 = $ncpa::params::package_name,
   String $download_destination         = $ncpa::params::download_destination,
-  String $config_template              = $ncpa::params::config_template,
   String $api_token                    = $ncpa::params::api_token,
   Optional[String] $config_content     = undef,
   Optional[String[1]] $package_version = $ncpa::params::package_version,
