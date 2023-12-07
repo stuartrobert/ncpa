@@ -13,13 +13,23 @@ class ncpa (
   Optional[String[1]] $proxy_url       = $ncpa::params::proxy_url,
 ) inherits ncpa::params {
 
+  if versioncmp($package_version) >= '3.0.0' {
+    $config_template = 'ncpa/ncpa.cfg-v3.epp'
+    $service_names = ['NCPA']
+    $install_path = 'C:\Program Files\Nagios\NCPA'
+  } else [
+    $config_template = 'ncpa/ncpa.cfg-v2.epp'
+    $service_names = ['ncpalistener', 'ncpapassive']
+    $install_path = 'C:\Program Files (x86)\Nagios\NCPA'
+  }
+
   class { 'ncpa::install':
   }
   class { 'ncpa::config':
     require => Class['ncpa::install'],
   }
 
-  service { 'ncpalistener':
+  service { $service_names:
     ensure  => $service_state,
     enable  => $service_enable,
     require => Class['ncpa::config'],
