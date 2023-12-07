@@ -12,7 +12,7 @@ class ncpa (
   Optional[String[1]] $proxy_url       = $ncpa::params::proxy_url,
 ) inherits ncpa::params {
 
-  if versioncmp($package_version) >= '3.0.0' {
+  if versioncmp($package_version, '3.0.0') >= 0 {
     $config_template = 'ncpa/ncpa.cfg-v3.epp'
     $service_names = ['NCPA']
     $install_path = 'C:\Program Files\Nagios\NCPA'
