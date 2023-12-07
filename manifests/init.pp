@@ -17,7 +17,7 @@ class ncpa (
     $config_template = 'ncpa/ncpa.cfg-v3.epp'
     $service_names = ['NCPA']
     $install_path = 'C:\Program Files\Nagios\NCPA'
-  } else [
+  } else {
     $config_template = 'ncpa/ncpa.cfg-v2.epp'
     $service_names = ['ncpalistener', 'ncpapassive']
     $install_path = 'C:\Program Files (x86)\Nagios\NCPA'
