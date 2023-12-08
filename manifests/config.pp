@@ -20,7 +20,7 @@ class ncpa::config (
         ensure  => file,
         owner   => 'SYSTEM',
         content => $real_content,
-        notify  => Service['ncpalistener'],
+        notify  => Service[$ncpa::service_names],
       }
 
     }
